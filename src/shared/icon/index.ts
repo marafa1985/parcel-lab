@@ -1,2 +1,5 @@
 import { ReactComponent as LockIcon } from "./lock.svg";
-export { LockIcon };
+import { ReactComponent as SpinnerIcon } from "./spinner.svg";
+import { ReactComponent as ErrorIcon } from "./error.svg";
+
+export { LockIcon, SpinnerIcon, ErrorIcon };

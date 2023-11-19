@@ -12,7 +12,7 @@ type Story = StoryObj<typeof SignIn>;
 
 export const Primary: Story = {
   render: () => (
-    <div className="flex justify-center items-center h-screen w-screen m-auto from-blue-100 bg-gradient-to-b">
+    <div className="flex justify-center items-center  h-screen w-screen m-auto from-blue-100 bg-gradient-to-b">
       <section>
         <SignIn />
       </section>

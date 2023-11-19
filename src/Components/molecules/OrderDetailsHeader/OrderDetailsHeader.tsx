@@ -7,9 +7,9 @@ type Props = {};
 
 export const OrderDetailsHeader = (props: Props) => {
   return (
-    <div className="flex justify-between items-center">
+    <header className="flex justify-between items-center m-4">
       <Logo />
       <IconButton icon={<LockIcon className="h-4 w-4" />}>sign out</IconButton>
-    </div>
+    </header>
   );
 };

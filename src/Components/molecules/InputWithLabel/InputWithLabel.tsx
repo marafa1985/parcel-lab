@@ -10,7 +10,7 @@ type InputFieldRef = ForwardedRef<HTMLInputElement>;
 export const InputWithLabel = forwardRef(
   ({ label, ...props }: InputWithLabelProps, ref: InputFieldRef) => {
     return (
-      <p>
+      <p className="py-2">
         <Label>
           {label}
           <InputField ref={ref} {...props} type={props.type} />
