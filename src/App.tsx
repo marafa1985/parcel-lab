@@ -1,11 +1,14 @@
-import { OderView } from "Components/pages/OrderView/OderView";
-import { SignIn } from "./Components/pages/SignIn/SignIn";
+import { OrderDetailsProvider } from "context/OrderDetailsContext";
+import { AppRouter } from "Components/particle/AppRouter/AppRouter";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <main className="flex items-center justify-between min-h-screen m-auto  md:from-blue-100 md:bg-gradient-to-b ">
-      <SignIn />
-    </main>
+    <BrowserRouter>
+      <OrderDetailsProvider>
+        <AppRouter />
+      </OrderDetailsProvider>
+    </BrowserRouter>
   );
 }
 

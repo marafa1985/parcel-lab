@@ -1,17 +1,19 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Button, Card } from "Components/atoms";
 import {
   InputWithLabel,
   SignInHeader,
   ErrorMessage,
 } from "Components/molecules";
-import { useSignIn } from "shared/hooks/useSignIn";
 import { isErrorResponse } from "shared/util";
+import { OrderDetailsContext } from "context/OrderDetailsContext";
 
 export const SignInForm = () => {
   const orderNumberRef = useRef<HTMLInputElement>(null);
   const zipCodeRef = useRef<HTMLInputElement>(null);
-  const { order, setOrderQuery, isLoading } = useSignIn();
+  const {
+    signIn: { order, setOrderQuery, isLoading },
+  } = useContext(OrderDetailsContext);
 
   const handleSinInSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

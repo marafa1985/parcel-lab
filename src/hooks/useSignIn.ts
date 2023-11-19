@@ -1,9 +1,23 @@
 import { getOrderDetails } from "shared/client/signIn";
-import useSWRMutation from "swr/mutation";
+import { ResponseError } from "shared/types/error";
+import { Order } from "shared/types/types";
+import useSWRMutation, { TriggerWithArgs } from "swr/mutation";
 
-type OrderDetails = {
+export type OrderDetails = {
   orderNumber: string;
   zipCode: string;
+};
+
+export type SignIn = {
+  order: Order | ResponseError | undefined;
+  error: ResponseError | undefined;
+  isLoading: boolean;
+  setOrderQuery: TriggerWithArgs<
+    Order | ResponseError,
+    any,
+    "/orders",
+    OrderDetails
+  >;
 };
 
 const getOrder = async (_: string, { arg }: { arg: OrderDetails }) => {
@@ -11,7 +25,7 @@ const getOrder = async (_: string, { arg }: { arg: OrderDetails }) => {
   return await getOrderDetails(orderNumber, zipCode);
 };
 
-export const useSignIn = () => {
+export const useSignIn = (): SignIn => {
   const {
     trigger: setOrderQuery,
     data: order,

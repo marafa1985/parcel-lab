@@ -1,16 +1,25 @@
-import type { StoryFn, Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
+
 import { Button } from "./Button";
 
-export default {
+const meta: Meta<typeof Button> = {
   title: "atoms/Button",
   component: Button,
-} as Meta;
+};
 
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+export default meta;
+type Story = StoryObj<typeof Button>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  type: "button",
-  children: "Primary",
-  onClick: () => alert("clicked"),
+export const Primary: Story = {
+  args: {
+    children: "Primary",
+  },
+  render: (args) => <Button {...args} />,
+};
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+  },
+  render: (args) => <Button {...args} />,
 };

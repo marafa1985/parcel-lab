@@ -1,4 +1,4 @@
-import { Card, Label } from "Components/atoms";
+import { Card } from "Components/atoms";
 
 type ArticlesDetailsProps = {};
 
