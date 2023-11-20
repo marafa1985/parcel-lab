@@ -53,7 +53,7 @@ describe("OrderDetailsContext", () => {
     fireEvent.change(orderNumber, { target: { value: "12345" } });
     fireEvent.change(zipCode, { target: { value: "12345" } });
 
-    const trackButton = screen.getByRole("submit");
+    const trackButton = screen.getByRole("track");
 
     if (trackButton) {
       fireEvent.click(trackButton);
@@ -82,7 +82,7 @@ describe("OrderDetailsContext", () => {
     fireEvent.change(orderNumber, { target: { value: "12345" } });
     fireEvent.change(zipCode, { target: { value: "12345" } });
 
-    const trackButton = screen.getByRole("submit");
+    const trackButton = screen.getByRole("track");
 
     if (trackButton) {
       fireEvent.click(trackButton);

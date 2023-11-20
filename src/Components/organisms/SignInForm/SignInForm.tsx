@@ -50,7 +50,7 @@ export const SignInForm = () => {
         </fieldset>
 
         <div className=" border-t border-gray-400 pt-5 !my-5">
-          <Button isLoading={isLoading} type="submit" role="submit">
+          <Button data-testid="track" isLoading={isLoading} type="submit">
             Track
           </Button>
         </div>

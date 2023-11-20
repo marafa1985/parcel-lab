@@ -1,6 +1,6 @@
 # Parcel Lab frontend challenge
 
-This project is provided as a sample solution for parcel lab frontend challenge. Base on Atomic design to build the UI component using storybook, in addition to axios and SWR for handling requests and caching, and Tailwind for styling the application.
+This project is provided as sample solution for parcel lab frontend challenge with taking care of accessibility. The solution was build based on Atomic design for building the UI components, by using storybook, in addition to axios and SWR for handling requests and caching, and Tailwind for styling. The application also developed by TypeScript.
 
 ## Atomic Design
 
