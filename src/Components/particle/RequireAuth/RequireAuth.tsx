@@ -4,10 +4,10 @@ import { OrderDetailsContext } from "context/OrderDetailsContext";
 
 type RequireAuthProps = { children: JSX.Element };
 export const RequireAuth = ({ children }: RequireAuthProps) => {
-  let { orderDetails } = useContext(OrderDetailsContext);
+  let { order } = useContext(OrderDetailsContext);
   let location = useLocation();
 
-  if (!orderDetails) {
+  if (!order) {
     return <Navigate to="/" state={{ from: location }} replace />;
   }
 

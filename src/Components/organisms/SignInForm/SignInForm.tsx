@@ -1,25 +1,23 @@
 import { useContext, useRef } from "react";
-import { Button, Card } from "Components/atoms";
+import { OrderDetailsContext } from "context/OrderDetailsContext";
 import {
   InputWithLabel,
   SignInHeader,
   ErrorMessage,
 } from "Components/molecules";
-import { isErrorResponse } from "shared/util";
-import { OrderDetailsContext } from "context/OrderDetailsContext";
+import { Button, Card } from "Components/atoms";
 
 export const SignInForm = () => {
+  const { signIn, error, isLoading } = useContext(OrderDetailsContext);
+
   const orderNumberRef = useRef<HTMLInputElement>(null);
   const zipCodeRef = useRef<HTMLInputElement>(null);
-  const {
-    signIn: { order, setOrderQuery, isLoading },
-  } = useContext(OrderDetailsContext);
 
   const handleSinInSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (orderNumberRef.current?.value && zipCodeRef.current?.value) {
-      setOrderQuery({
+      signIn({
         orderNumber: orderNumberRef.current.value,
         zipCode: zipCodeRef.current.value,
       });
@@ -54,7 +52,8 @@ export const SignInForm = () => {
             Track
           </Button>
         </div>
-        {order && isErrorResponse(order) && <ErrorMessage {...order} />}
+
+        {error && <ErrorMessage {...error} />}
       </form>
     </Card>
   );

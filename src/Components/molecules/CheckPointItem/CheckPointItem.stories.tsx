@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { PickupAddress } from "./PickupAddress";
+import { CheckPointItem } from "./CheckPointItem";
 
-const meta: Meta<typeof PickupAddress> = {
-  title: "organisms/PickupAddress",
-  component: PickupAddress,
+const meta: Meta<typeof CheckPointItem> = {
+  title: "molecules/CheckPointItem",
+  component: CheckPointItem,
 };
 
 export default meta;
-type Story = StoryObj<typeof PickupAddress>;
+type Story = StoryObj<typeof CheckPointItem>;
 
 export const Primary: Story = {
   args: {
@@ -26,5 +26,5 @@ export const Primary: Story = {
     country_iso3: "DEU",
     city: "Munich",
   },
-  render: (args) => <PickupAddress {...args} />,
+  render: (args) => <CheckPointItem {...args} />,
 };

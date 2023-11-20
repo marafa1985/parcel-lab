@@ -1,7 +1,7 @@
 import { getOrderDetails } from "shared/client/signIn";
 import { ResponseError } from "shared/types/error";
 import { Order } from "shared/types/types";
-import useSWRMutation, { TriggerWithArgs } from "swr/mutation";
+import useSWRMutation from "swr/mutation";
 
 export type OrderDetails = {
   orderNumber: string;
@@ -9,37 +9,33 @@ export type OrderDetails = {
 };
 
 export type SignIn = {
-  order: Order | ResponseError | undefined;
   error: ResponseError | undefined;
   isLoading: boolean;
-  setOrderQuery: TriggerWithArgs<
-    Order | ResponseError,
-    any,
-    "/orders",
-    OrderDetails
-  >;
+  getOrder: (orderDetails: OrderDetails) => Promise<Order | ResponseError>;
 };
 
-const getOrder = async (_: string, { arg }: { arg: OrderDetails }) => {
+const fetchOrder = async (_: string, { arg }: { arg: OrderDetails }) => {
   const { orderNumber, zipCode } = arg;
   return await getOrderDetails(orderNumber, zipCode);
 };
 
-export const useSignIn = (): SignIn => {
+export const useOrder = (): SignIn => {
   const {
-    trigger: setOrderQuery,
-    data: order,
+    trigger,
     isMutating: isLoading,
     error,
-  } = useSWRMutation("/orders", getOrder, {
+  } = useSWRMutation("/orders", fetchOrder, {
     populateCache: true,
     revalidate: false,
   });
 
+  const getOrder = ({ orderNumber, zipCode }: OrderDetails) => {
+    return trigger({ orderNumber, zipCode });
+  };
+
   return {
-    order,
     error,
     isLoading,
-    setOrderQuery,
+    getOrder,
   };
 };

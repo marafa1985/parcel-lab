@@ -7,7 +7,7 @@ export type IconButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 export const IconButton = ({ icon, children, ...props }: IconButtonProps) => {
   return (
     <a {...props}>
-      <span className="flex items-center justify-between ring-1 ring-indigo-800 rounded px-3 py-1   text-indigo-800">
+      <span className="flex items-center justify-between ring-1 ring-indigo-800 rounded px-3 py-1   text-indigo-800 cursor-pointer">
         {icon}
         {children}
       </span>

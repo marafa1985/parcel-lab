@@ -1,13 +1,16 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SignIn, useSignIn } from "hooks/useSignIn";
+import { OrderDetails, useOrder } from "hooks/useSignIn";
 import { Order } from "shared/types/types";
 import { isErrorResponse } from "shared/util";
+import { ResponseError } from "shared/types/error";
 
 export type OrderDetailsContextType = {
-  signIn: SignIn;
+  signIn: (orderDetails: OrderDetails) => void;
   signOut: () => void;
-  orderDetails: Order | null;
+  order: Order | null;
+  isLoading: boolean;
+  error: ResponseError | undefined;
 };
 export const OrderDetailsContext = createContext<OrderDetailsContextType>(
   {} as OrderDetailsContextType
@@ -19,31 +22,32 @@ export const OrderDetailsProvider = ({
   children: React.ReactNode;
 }) => {
   const navigate = useNavigate();
-  const [orderDetails, setOrderDetails] = useState<Order | null>(null);
+  const [order, setOrderDetails] = useState<Order | null>(null);
+  const [error, setError] = useState<ResponseError>();
 
-  const signIn = useSignIn();
-  const signOut = () => {
+  const { getOrder, isLoading } = useOrder();
+
+  const signIn = useCallback(
+    async (orderDetails: OrderDetails) => {
+      const orderData = await getOrder(orderDetails);
+
+      if (!isErrorResponse(orderData)) {
+        setOrderDetails(orderData);
+        navigate("/orderview", { replace: true });
+      } else {
+        setError(orderData);
+      }
+    },
+    [getOrder, navigate]
+  );
+
+  const signOut = useCallback(() => {
     setOrderDetails(null);
-    navigate("/");
-  };
-
-  useEffect(() => {
-    if (signIn.order && !isErrorResponse(signIn.order)) {
-      setOrderDetails(signIn.order);
-      navigate("/orderview", { replace: true });
-    } else {
-      setOrderDetails(null);
-      navigate("/");
-    }
-  }, [navigate, signIn.order]);
+  }, [setOrderDetails]);
 
   return (
     <OrderDetailsContext.Provider
-      value={{
-        signIn,
-        signOut,
-        orderDetails,
-      }}
+      value={{ signIn, signOut, order, isLoading, error }}
     >
       {children}
     </OrderDetailsContext.Provider>

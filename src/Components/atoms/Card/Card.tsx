@@ -10,7 +10,7 @@ export const Card = ({ className, children }: CardProps) => {
     <section
       className={`${
         className ?? ""
-      } max-w-sm mx-auto bg-white rounded-xl md:shadow-lg space-y-2 items-center`}
+      } flex-1 max-w-sm mx-auto bg-white rounded-xl md:shadow-lg space-y-2 items-center`}
     >
       {children}
     </section>
