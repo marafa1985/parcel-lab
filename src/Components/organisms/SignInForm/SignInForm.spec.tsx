@@ -1,13 +1,16 @@
-import {
-  OrderDetailsContextProvider,
-  OrderDetailsContext,
-} from "./OrderDetailsContext";
-import { useContext } from "react";
+import { OrderDetailsContextProvider } from "context/OrderDetailsContext";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
+import { SignInForm } from "./SignInForm";
 
 jest.mock("axios");
+const mockedUsedNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
 
 const errorDataMock = {
   data: {
@@ -25,32 +28,13 @@ const orderDataMock = {
   },
 };
 
-const MyComponent = () => {
-  const { error, order, signIn } = useContext(OrderDetailsContext);
-  const handleClick = async () => {
-    await signIn({
-      orderNumber: "12345",
-      zipCode: "12345",
-    });
-  };
-  return (
-    <>
-      {error && <p data-testid="error">{error.error.message}</p>}
-      {order && <p data-testid="success">{order._id}</p>}
-      <button data-testid="trackBtn" onClick={handleClick}>
-        Track
-      </button>
-    </>
-  );
-};
-
 describe("OrderDetailsContext", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     jest.useFakeTimers();
   });
 
-  it("should return error in case of no orders", async () => {
+  it("should return show error message in case of no orders", async () => {
     (axios.get as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve(errorDataMock)
     );
@@ -58,17 +42,24 @@ describe("OrderDetailsContext", () => {
     render(
       <BrowserRouter>
         <OrderDetailsContextProvider>
-          <MyComponent />
+          <SignInForm />
         </OrderDetailsContextProvider>
       </BrowserRouter>
     );
-    const trackButton = screen.getByTestId("trackBtn");
+
+    const orderNumber = screen.getByTestId("orderNumber");
+    const zipCode = screen.getByTestId("zipCode");
+
+    fireEvent.change(orderNumber, { target: { value: "12345" } });
+    fireEvent.change(zipCode, { target: { value: "12345" } });
+
+    const trackButton = screen.getByRole("submit");
 
     if (trackButton) {
       fireEvent.click(trackButton);
     }
     await waitFor(() => {
-      expect(screen.getByTestId("error")).toBeDefined();
+      expect(screen.getByRole("alert")).toBeDefined();
     });
   });
 
@@ -80,17 +71,24 @@ describe("OrderDetailsContext", () => {
     render(
       <BrowserRouter>
         <OrderDetailsContextProvider>
-          <MyComponent />
+          <SignInForm />
         </OrderDetailsContextProvider>
       </BrowserRouter>
     );
-    const trackButton = screen.getByTestId("trackBtn");
+
+    const orderNumber = screen.getByTestId("orderNumber");
+    const zipCode = screen.getByTestId("zipCode");
+
+    fireEvent.change(orderNumber, { target: { value: "12345" } });
+    fireEvent.change(zipCode, { target: { value: "12345" } });
+
+    const trackButton = screen.getByRole("submit");
 
     if (trackButton) {
       fireEvent.click(trackButton);
     }
     await waitFor(() => {
-      expect(screen.getByTestId("success")).toBeDefined();
+      expect(mockedUsedNavigate).toBeCalled();
     });
   });
 });

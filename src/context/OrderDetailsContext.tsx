@@ -16,7 +16,7 @@ export const OrderDetailsContext = createContext<OrderDetailsContextType>(
   {} as OrderDetailsContextType
 );
 
-export const OrderDetailsProvider = ({
+export const OrderDetailsContextProvider = ({
   children,
 }: {
   children: React.ReactNode;

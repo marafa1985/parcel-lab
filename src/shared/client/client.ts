@@ -1,11 +1,16 @@
 import axios from "axios";
 
-export default axios.create({
-  baseURL: process.env.REACT_APP_API ?? "https://api.prcl.dev",
-  headers: {
-    "Content-Type": "application/json",
-    "Cache-Control": "no-cache, no-store, must-revalidate",
-    Pragma: "no-cache",
-    Accept: "application/json",
-  },
-});
+export const clientAPI = (baseURL?: string) => {
+  axios.create({
+    baseURL: baseURL,
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache, no-store, must-revalidate",
+      Pragma: "no-cache",
+      Accept: "application/json",
+    },
+  });
+
+  return axios;
+};
+export default clientAPI;

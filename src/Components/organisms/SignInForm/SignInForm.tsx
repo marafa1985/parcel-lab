@@ -31,6 +31,7 @@ export const SignInForm = () => {
 
         <fieldset>
           <InputWithLabel
+            data-testid="orderNumber"
             name="orderNumber"
             type="text"
             label="Order Number"
@@ -39,6 +40,7 @@ export const SignInForm = () => {
           ></InputWithLabel>
 
           <InputWithLabel
+            data-testid="zipCode"
             name="zipCode"
             type="text"
             label="Zip Code"
@@ -48,7 +50,7 @@ export const SignInForm = () => {
         </fieldset>
 
         <div className=" border-t border-gray-400 pt-5 !my-5">
-          <Button isLoading={isLoading} type="submit">
+          <Button isLoading={isLoading} type="submit" role="submit">
             Track
           </Button>
         </div>

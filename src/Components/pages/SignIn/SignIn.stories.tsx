@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SignIn } from "./SignIn";
-import { OrderDetailsProvider } from "context/OrderDetailsContext";
+import { OrderDetailsContextProvider } from "context/OrderDetailsContext";
 import { BrowserRouter } from "react-router-dom";
 
 const meta: Meta<typeof SignIn> = {
@@ -15,13 +15,13 @@ type Story = StoryObj<typeof SignIn>;
 export const Primary: Story = {
   render: () => (
     <BrowserRouter>
-      <OrderDetailsProvider>
+      <OrderDetailsContextProvider>
         <div className="flex justify-center items-center  h-screen w-screen m-auto from-blue-100 bg-gradient-to-b">
           <section>
             <SignIn />
           </section>
         </div>
-      </OrderDetailsProvider>
+      </OrderDetailsContextProvider>
     </BrowserRouter>
   ),
 };

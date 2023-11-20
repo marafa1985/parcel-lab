@@ -1,13 +1,13 @@
-import { OrderDetailsProvider } from "context/OrderDetailsContext";
+import { OrderDetailsContextProvider } from "context/OrderDetailsContext";
 import { AppRouter } from "Components/particle/AppRouter/AppRouter";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-      <OrderDetailsProvider>
+      <OrderDetailsContextProvider>
         <AppRouter />
-      </OrderDetailsProvider>
+      </OrderDetailsContextProvider>
     </BrowserRouter>
   );
 }
