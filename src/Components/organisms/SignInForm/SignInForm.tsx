@@ -4,8 +4,8 @@ import {
   InputWithLabel,
   SignInHeader,
   ErrorMessage,
-} from "Components/molecules";
-import { Button, Card } from "Components/atoms";
+} from "components/molecules";
+import { Button, Card } from "components/atoms";
 
 export const SignInForm = () => {
   const { signIn, error, isLoading } = useContext(OrderDetailsContext);

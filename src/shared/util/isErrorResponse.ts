@@ -1,4 +1,4 @@
-import { ErrorMessageProps } from "Components/molecules";
+import { ErrorMessageProps } from "components/molecules";
 import { ResponseError } from "shared/types/error";
 import { Order } from "shared/types/types";
 

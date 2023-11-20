@@ -1,7 +1,7 @@
-import { OrderDetailsHeader } from "Components/molecules/OrderDetailsHeader/OrderDetailsHeader";
-import { ArticlesDetails } from "Components/organisms/ArticlesDetails/ArticlesDetails";
-import { PickupAddress } from "Components/organisms/PickupAddress/PickupAddress";
-import { ShippingDetails } from "Components/organisms/ShippingDetails/ShippingDetails";
+import { OrderDetailsHeader } from "components/molecules/OrderDetailsHeader/OrderDetailsHeader";
+import { ArticlesDetails } from "components/organisms/ArticlesDetails/ArticlesDetails";
+import { PickupAddress } from "components/organisms/PickupAddress/PickupAddress";
+import { ShippingDetails } from "components/organisms/ShippingDetails/ShippingDetails";
 import { OrderDetailsContext } from "context/OrderDetailsContext";
 import { useContext } from "react";
 import { orderUtil } from "shared/util";

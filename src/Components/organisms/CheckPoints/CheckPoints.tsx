@@ -1,4 +1,4 @@
-import { CheckPointItem } from "Components/molecules/CheckPointItem/CheckPointItem";
+import { CheckPointItem } from "components/molecules/CheckPointItem/CheckPointItem";
 import { useState } from "react";
 import { Checkpoint } from "shared/types/types";
 

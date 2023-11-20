@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Logo } from "Components/atoms";
-import { IconButton } from "Components/molecules/IconButton/IconButton";
+import { Logo } from "components/atoms";
+import { IconButton } from "components/molecules/IconButton/IconButton";
 import { LockIcon } from "shared/icon";
 import { OrderDetailsContext } from "context/OrderDetailsContext";
 

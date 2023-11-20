@@ -1,5 +1,5 @@
-import { Card } from "Components/atoms";
-import { ArticleItem } from "Components/molecules/ArticleItem/ArticleItem";
+import { Card } from "components/atoms";
+import { ArticleItem } from "components/molecules/ArticleItem/ArticleItem";
 import { Article } from "shared/types/types";
 
 type ArticlesDetailsProps = {

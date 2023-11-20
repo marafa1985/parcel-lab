@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Parcel Lab frontend challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is provided as a sample solution for parcel lab frontend challenge. Base on Atomic design to build the UI component using storybook, in addition to axios and SWR for handling requests and caching, and Tailwind for styling the application.
 
-## Available Scripts
+## Atomic Design
 
-In the project directory, you can run:
+As in the structure of Components folder in the project you can see it's divided into subfolder which represents a set responsible components, either seatless component or has effect to the application. there is also anther folder `particle` folder which added to handle none UI Component, but it's not part of the Atomic Design.
 
-### `npm start`
+<img src="./readme/atomic.png" width="250"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Storybook
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm run storybook`
+
+The application implemented by storybook for UI styling and testing, and check how the component integrated together from the UI and styling perspective. this also grouped as atomic design for better experience for developer.
+
+This helps to move and check the project components and test its behavior and usability.
+
+<img src="./readme/storybook.png" width="350"/>
+
+## Testing
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+There are three different level of testing in the solution, which cover the common and advance seniors in daily basis, as the following:
 
-### `npm run build`
+### Unit Testing:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+There is a sample for unit testing in the following project path `/src/shared/util/orderUtil.spec.ts`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Integration Testing:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There is a sample for integration testing as the following:
 
-### `npm run eject`
+1. Context: `/src/context/OrderDetailsContext.spec.tsx`
+2. Component: `/src/components/organisms/SignInForm/SignInForm.spec.tsx`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Order View
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="./readme/orderview.png" />
