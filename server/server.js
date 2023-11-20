@@ -1,6 +1,6 @@
-import express from "express";
-import cors from "cors";
-import { findOrderByOrderNumberAndZipCode } from "./service/orders.js";
+const express = require("express");
+const cors = require("cors");
+const { findOrderByOrderNumberAndZipCode } = require("./service/orders.js");
 const app = express();
 const port = 3001;
 
