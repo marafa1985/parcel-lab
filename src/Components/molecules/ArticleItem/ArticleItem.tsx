@@ -1,5 +1,5 @@
-import { Article } from "shared/types/types";
-import { formatCurrencyForLocale } from "shared/util/localeFormatter";
+import { Article } from "../../../shared/types/types";
+import { formatCurrencyForLocale } from "../../../shared/util";
 
 export const ArticleItem = ({
   articleNo,

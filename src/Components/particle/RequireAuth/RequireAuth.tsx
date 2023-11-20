@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useLocation, Navigate } from "react-router-dom";
-import { OrderDetailsContext } from "context/OrderDetailsContext";
+import { OrderDetailsContext } from "../../../context/OrderDetailsContext";
 
 type RequireAuthProps = { children: JSX.Element };
 export const RequireAuth = ({ children }: RequireAuthProps) => {

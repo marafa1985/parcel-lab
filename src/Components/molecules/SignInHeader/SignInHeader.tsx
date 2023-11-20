@@ -1,4 +1,4 @@
-import { Logo } from "components/atoms";
+import { Logo } from "../../atoms";
 
 export const SignInHeader = () => {
   return (

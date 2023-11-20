@@ -1,11 +1,7 @@
 import { useContext, useRef } from "react";
-import { OrderDetailsContext } from "context/OrderDetailsContext";
-import {
-  InputWithLabel,
-  SignInHeader,
-  ErrorMessage,
-} from "components/molecules";
-import { Button, Card } from "components/atoms";
+import { OrderDetailsContext } from "../../../context/OrderDetailsContext";
+import { Card, Button } from "../../atoms";
+import { SignInHeader, InputWithLabel, ErrorMessage } from "../../molecules";
 
 export const SignInForm = () => {
   const { signIn, error, isLoading } = useContext(OrderDetailsContext);

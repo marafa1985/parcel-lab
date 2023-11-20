@@ -1,6 +1,6 @@
-import { OrderDetailsContextProvider } from "context/OrderDetailsContext";
-import { AppRouter } from "components/particle/AppRouter/AppRouter";
 import { BrowserRouter } from "react-router-dom";
+import { AppRouter } from "./Components/particle/AppRouter/AppRouter";
+import { OrderDetailsContextProvider } from "./context/OrderDetailsContext";
 
 function App() {
   return (

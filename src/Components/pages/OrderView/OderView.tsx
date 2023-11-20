@@ -1,10 +1,10 @@
-import { OrderDetailsHeader } from "components/molecules/OrderDetailsHeader/OrderDetailsHeader";
-import { ArticlesDetails } from "components/organisms/ArticlesDetails/ArticlesDetails";
-import { PickupAddress } from "components/organisms/PickupAddress/PickupAddress";
-import { ShippingDetails } from "components/organisms/ShippingDetails/ShippingDetails";
-import { OrderDetailsContext } from "context/OrderDetailsContext";
 import { useContext } from "react";
-import { orderUtil } from "shared/util";
+import { OrderDetailsContext } from "../../../context/OrderDetailsContext";
+import { orderUtil } from "../../../shared/util";
+import { OrderDetailsHeader } from "../../molecules";
+import { ArticlesDetails } from "../../organisms/ArticlesDetails/ArticlesDetails";
+import { PickupAddress } from "../../organisms/PickupAddress/PickupAddress";
+import { ShippingDetails } from "../../organisms/ShippingDetails/ShippingDetails";
 
 export const OderView = () => {
   const { order } = useContext(OrderDetailsContext);

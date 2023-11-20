@@ -1,5 +1,5 @@
-import { Meta } from "shared/types/types";
-import { formatDateForLocale } from "shared/util/localeFormatter";
+import { Meta } from "../../../shared/types/types";
+import { formatDateForLocale } from "../../../shared/util";
 
 export const DeliveryInformation = ({
   delivery_date,

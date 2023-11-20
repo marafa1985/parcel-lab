@@ -1,4 +1,4 @@
-import { Meta } from "shared/types/types";
+import { Meta } from "../../../shared/types/types";
 
 export const Pickup = ({
   pickup_address,

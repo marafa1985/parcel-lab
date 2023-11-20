@@ -1,8 +1,8 @@
-import { OrderDetailsContextProvider } from "context/OrderDetailsContext";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import { SignInForm } from "./SignInForm";
+import { OrderDetailsContextProvider } from "../../../context/OrderDetailsContext";
 
 jest.mock("axios");
 const mockedUsedNavigate = jest.fn();

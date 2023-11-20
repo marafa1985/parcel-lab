@@ -1,5 +1,5 @@
-import { Checkpoint } from "shared/types/types";
-import { formatDateForLocale } from "shared/util/localeFormatter";
+import { Checkpoint } from "../../../shared/types/types";
+import { formatDateForLocale } from "../../../shared/util";
 
 export const CheckPointItem = ({
   status_details,

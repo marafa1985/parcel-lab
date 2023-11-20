@@ -1,4 +1,4 @@
-import { Order } from "shared/types/types";
+import { Order } from "../types/types";
 import { orderUtil } from "./orderUtil";
 
 describe("orderUtil", () => {

@@ -1,4 +1,4 @@
-import { Article, Checkpoint, Order } from "shared/types/types";
+import { Checkpoint, Article, Order } from "../shared/types/types";
 
 export type OrderStatus = {
   lastCheckpoint?: Checkpoint;

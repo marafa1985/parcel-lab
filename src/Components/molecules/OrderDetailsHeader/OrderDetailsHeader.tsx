@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Logo } from "components/atoms";
-import { IconButton } from "components/molecules/IconButton/IconButton";
-import { LockIcon } from "shared/icon";
-import { OrderDetailsContext } from "context/OrderDetailsContext";
+import { OrderDetailsContext } from "../../../context/OrderDetailsContext";
+import { LockIcon } from "../../../shared/icon";
+import { Logo } from "../../atoms";
+import { IconButton } from "../IconButton/IconButton";
 
 type Props = {};
 

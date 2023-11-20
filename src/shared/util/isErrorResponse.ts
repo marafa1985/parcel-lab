@@ -1,6 +1,6 @@
-import { ErrorMessageProps } from "components/molecules";
-import { ResponseError } from "shared/types/error";
-import { Order } from "shared/types/types";
+import { ErrorMessageProps } from "../../Components/molecules";
+import { ResponseError } from "../types/error";
+import { Order } from "../types/types";
 
 export const isErrorResponse = (
   response: ResponseError | Order

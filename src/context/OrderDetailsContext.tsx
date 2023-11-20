@@ -1,9 +1,9 @@
 import { createContext, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { OrderDetails, useOrder } from "hooks/useSignIn";
-import { Order } from "shared/types/types";
-import { isErrorResponse } from "shared/util";
-import { ResponseError } from "shared/types/error";
+import { OrderDetails, useOrder } from "../hooks/useSignIn";
+import { ResponseError } from "../shared/types/error";
+import { Order } from "../shared/types/types";
+import { isErrorResponse } from "../shared/util";
 
 export type OrderDetailsContextType = {
   signIn: (orderDetails: OrderDetails) => void;

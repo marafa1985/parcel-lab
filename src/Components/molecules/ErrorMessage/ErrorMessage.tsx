@@ -1,5 +1,5 @@
-import { ErrorIcon } from "shared/icon";
-import { ResponseError } from "shared/types/error";
+import { ErrorIcon } from "../../../shared/icon";
+import { ResponseError } from "../../../shared/types/error";
 
 export type ErrorMessageProps = {
   error: {

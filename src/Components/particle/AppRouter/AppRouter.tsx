@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
-import { MainLayout } from "components/templates/MainLayout/MainLayout";
-import { OderView } from "components/pages/OrderView/OderView";
-import { SignIn } from "components/pages/SignIn/SignIn";
+import { OderView } from "../../pages/OrderView/OderView";
+import { SignIn } from "../../pages/SignIn/SignIn";
+import { MainLayout } from "../../templates/MainLayout/MainLayout";
 
 export const AppRouter = () => {
   return (

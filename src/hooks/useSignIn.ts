@@ -1,7 +1,7 @@
-import { getOrderDetails } from "shared/client/signIn";
-import { ResponseError } from "shared/types/error";
-import { Order } from "shared/types/types";
 import useSWRMutation from "swr/mutation";
+import { getOrderDetails } from "../shared/client/signIn";
+import { ResponseError } from "../shared/types/error";
+import { Order } from "../shared/types/types";
 
 export type OrderDetails = {
   orderNumber: string;

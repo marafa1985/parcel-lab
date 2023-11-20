@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Pickup } from "./Pickup";
-import { formatDateForLocale } from "shared/util/localeFormatter";
+import { formatDateForLocale } from "../../../shared/util";
 
 const meta: Meta<typeof Pickup> = {
   title: "molecules/Pickup",

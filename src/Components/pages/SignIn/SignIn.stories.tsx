@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SignIn } from "./SignIn";
-import { OrderDetailsContextProvider } from "context/OrderDetailsContext";
 import { BrowserRouter } from "react-router-dom";
+import { OrderDetailsContextProvider } from "../../../context/OrderDetailsContext";
 
 const meta: Meta<typeof SignIn> = {
   title: "Pages/SignIn",

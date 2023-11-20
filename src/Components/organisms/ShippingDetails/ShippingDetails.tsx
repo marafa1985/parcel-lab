@@ -1,7 +1,7 @@
-import { Card } from "components/atoms";
+import { Checkpoint } from "../../../shared/types/types";
+import { Card } from "../../atoms";
+import { ProgressBar } from "../../molecules";
 import { CheckPoints } from "../CheckPoints/CheckPoints";
-import { ProgressBar } from "components/molecules";
-import { Checkpoint } from "shared/types/types";
 
 type ShippingDetailsProps = {
   checkpoints: Checkpoint[];

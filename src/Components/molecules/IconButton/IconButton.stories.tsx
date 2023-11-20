@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { IconButton } from "./IconButton";
-import { LockIcon } from "shared/icon";
+import { LockIcon } from "../../../shared/icon";
 
 const meta: Meta<typeof IconButton> = {
   title: "molecules/IconButton",

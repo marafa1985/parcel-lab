@@ -1,6 +1,6 @@
-import { Card } from "components/atoms";
-import { DeliveryInformation, Pickup } from "components/molecules";
-import { Checkpoint } from "shared/types/types";
+import { Checkpoint } from "../../../shared/types/types";
+import { Card } from "../../atoms";
+import { Pickup, DeliveryInformation } from "../../molecules";
 
 export const PickupAddress = ({ status, status_details, meta }: Checkpoint) => {
   return (

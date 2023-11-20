@@ -1,7 +1,7 @@
-import { Order } from "shared/types/types";
+import { ResponseError } from "../types/error";
+import { Order } from "../types/types";
 import clientAPI from "./client";
 import axios from "axios";
-import { ResponseError } from "shared/types/error";
 
 const BASE_URL = process.env.REACT_APP_API ?? "https://api.prcl.dev";
 

@@ -1,6 +1,6 @@
-import { Card } from "components/atoms";
-import { ArticleItem } from "components/molecules/ArticleItem/ArticleItem";
-import { Article } from "shared/types/types";
+import { Article } from "../../../shared/types/types";
+import { Card } from "../../atoms";
+import { ArticleItem } from "../../molecules/ArticleItem/ArticleItem";
 
 type ArticlesDetailsProps = {
   articles: Article[];
